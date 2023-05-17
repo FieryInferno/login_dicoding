@@ -49,6 +49,7 @@ class _MainApp extends State<MainApp> {
               ),
               Expanded(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
                       margin: const EdgeInsets.symmetric(vertical: 10),
@@ -93,7 +94,22 @@ class _MainApp extends State<MainApp> {
                           ),
                           onPressed: () {},
                           child: const Text('Lupa password?'),
-                        )
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: ElevatedButton(
+                            style: const ButtonStyle(
+                              backgroundColor: MaterialStatePropertyAll(
+                                Color(0xFF2d3e50),
+                              ),
+                            ),
+                            onPressed: () {},
+                            child: const Text('Masuk'),
+                          ),
+                        ),
                       ],
                     ),
                   ],
