@@ -75,6 +75,27 @@ class _MainApp extends State<MainApp> {
                       ),
                       type: _type,
                     ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        TextButton(
+                          style: const ButtonStyle(
+                            foregroundColor: MaterialStatePropertyAll(
+                              Colors.black,
+                            ),
+                            textStyle: MaterialStatePropertyAll(
+                              TextStyle(
+                                fontWeight: FontWeight.normal,
+                                fontSize: 15,
+                                decoration: TextDecoration.underline,
+                              ),
+                            ),
+                          ),
+                          onPressed: () {},
+                          child: const Text('Lupa password?'),
+                        )
+                      ],
+                    ),
                   ],
                 ),
               ),
