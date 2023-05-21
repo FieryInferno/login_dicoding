@@ -37,85 +37,133 @@ class _MainApp extends State<MainApp> {
             )
           ],
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: Center(
-                  child: Image.asset('assets/long-logo-dicoding.png'),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Flexible(
+                  flex: 2,
+                  child: Center(
+                    child: Image.asset('assets/long-logo-dicoding.png'),
+                  ),
                 ),
-              ),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.symmetric(vertical: 10),
-                      child: const Text(
-                        'Masuk',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 40),
-                      ),
-                    ),
-                    const InputWidget(
-                      placeholder: 'Email',
-                      margin: EdgeInsets.symmetric(vertical: 10),
-                    ),
-                    InputWidget(
-                      placeholder: 'Password',
-                      suffixIcon: GestureDetector(
-                        onTap: () => setState(() =>
-                            _type = _type == 'password' ? 'text' : 'password'),
-                        child: Icon(
-                          Icons.remove_red_eye,
-                          color:
-                              _type == 'password' ? Colors.grey : Colors.blue,
+                Flexible(
+                  flex: 4,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.symmetric(vertical: 10),
+                        child: const Text(
+                          'Masuk',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 40),
                         ),
                       ),
-                      type: _type,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        TextButton(
-                          style: const ButtonStyle(
-                            foregroundColor: MaterialStatePropertyAll(
-                              Colors.black,
-                            ),
-                            textStyle: MaterialStatePropertyAll(
-                              TextStyle(
-                                fontWeight: FontWeight.normal,
-                                fontSize: 15,
-                                decoration: TextDecoration.underline,
-                              ),
-                            ),
+                      const InputWidget(
+                        placeholder: 'Email',
+                        margin: EdgeInsets.symmetric(vertical: 10),
+                      ),
+                      InputWidget(
+                        placeholder: 'Password',
+                        suffixIcon: GestureDetector(
+                          onTap: () => setState(() => _type =
+                              _type == 'password' ? 'text' : 'password'),
+                          child: Icon(
+                            Icons.remove_red_eye,
+                            color:
+                                _type == 'password' ? Colors.grey : Colors.blue,
                           ),
-                          onPressed: () {},
-                          child: const Text('Lupa password?'),
                         ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: ElevatedButton(
+                        type: _type,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          TextButton(
                             style: const ButtonStyle(
-                              backgroundColor: MaterialStatePropertyAll(
-                                Color(0xFF2d3e50),
+                              foregroundColor: MaterialStatePropertyAll(
+                                Colors.black,
+                              ),
+                              textStyle: MaterialStatePropertyAll(
+                                TextStyle(
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 15,
+                                  decoration: TextDecoration.underline,
+                                ),
                               ),
                             ),
                             onPressed: () {},
-                            child: const Text('Masuk'),
+                            child: const Text('Lupa password?'),
                           ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: ElevatedButton(
+                              style: const ButtonStyle(
+                                backgroundColor: MaterialStatePropertyAll(
+                                  Color(0xFF2d3e50),
+                                ),
+                              ),
+                              onPressed: () {},
+                              child: const Text('Masuk'),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Container(
+                        margin: const EdgeInsets.symmetric(vertical: 10),
+                        child: Row(
+                          children: const [
+                            Expanded(
+                              child: Divider(
+                                color: Colors.grey,
+                                thickness: 1,
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 30),
+                              child: Text('atau'),
+                            ),
+                            Expanded(
+                              child: Divider(
+                                color: Colors.grey,
+                                thickness: 1,
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: OutlinedButton(
+                              style: const ButtonStyle(
+                                foregroundColor: MaterialStatePropertyAll(
+                                  Color(0xFF2d3e50),
+                                ),
+                                side: MaterialStatePropertyAll(
+                                    BorderSide(color: Color(0xFF2d3e50))),
+                              ),
+                              onPressed: () {},
+                              child: const Text(
+                                'Masuk dengan Google',
+                                style: TextStyle(fontWeight: FontWeight.w400),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
