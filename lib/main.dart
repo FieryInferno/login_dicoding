@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../input_widget.dart';
+import '../components/input_widget.dart';
+import '../components/outlined_button_widget.dart';
 
 void main() => runApp(const MainApp());
 
@@ -139,26 +140,8 @@ class _MainApp extends State<MainApp> {
                           ],
                         ),
                       ),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: OutlinedButton(
-                              style: const ButtonStyle(
-                                foregroundColor: MaterialStatePropertyAll(
-                                  Color(0xFF2d3e50),
-                                ),
-                                side: MaterialStatePropertyAll(
-                                    BorderSide(color: Color(0xFF2d3e50))),
-                              ),
-                              onPressed: () {},
-                              child: const Text(
-                                'Masuk dengan Google',
-                                style: TextStyle(fontWeight: FontWeight.w400),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                      const OutlinedButtonWidget('Masuk dengan Google'),
+                      const OutlinedButtonWidget('Masuk dengan Facebook'),
                     ],
                   ),
                 ),
