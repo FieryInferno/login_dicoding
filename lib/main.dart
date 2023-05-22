@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../components/input_widget.dart';
 import '../components/outlined_button_widget.dart';
+import '../components/text_widget.dart';
 import '../theme_app.dart';
 
 void main() => runApp(const MainApp());
@@ -23,7 +24,7 @@ class _MainApp extends State<MainApp> {
         appBar: AppBar(
           backgroundColor: Colors.white,
           leading: Image.asset(
-            'assets/logo-dicoding.png',
+            'assets/images/logo-dicoding.png',
             width: 25,
             height: 25,
             scale: 1.2,
@@ -48,7 +49,7 @@ class _MainApp extends State<MainApp> {
               Flexible(
                 flex: 2,
                 child: Center(
-                  child: Image.asset('assets/long-logo-dicoding.png'),
+                  child: Image.asset('assets/images/long-logo-dicoding.png'),
                 ),
               ),
               Flexible(
@@ -58,12 +59,10 @@ class _MainApp extends State<MainApp> {
                   children: [
                     Container(
                       margin: const EdgeInsets.symmetric(vertical: 10),
-                      child: const Text(
+                      child: const TextWidget(
                         'Masuk',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 40,
-                        ),
+                        weight: FontWeight.bold,
+                        size: 40,
                       ),
                     ),
                     const InputWidget(
@@ -100,7 +99,7 @@ class _MainApp extends State<MainApp> {
                             ),
                           ),
                           onPressed: () {},
-                          child: const Text('Lupa password?'),
+                          child: const TextWidget('Lupa Password'),
                         ),
                       ],
                     ),
@@ -114,7 +113,7 @@ class _MainApp extends State<MainApp> {
                               ),
                             ),
                             onPressed: () {},
-                            child: const Text('Masuk'),
+                            child: const TextWidget('Masuk'),
                           ),
                         ),
                       ],
@@ -131,7 +130,7 @@ class _MainApp extends State<MainApp> {
                           ),
                           const Padding(
                             padding: EdgeInsets.symmetric(horizontal: 30),
-                            child: Text('atau'),
+                            child: TextWidget('atau'),
                           ),
                           Expanded(
                             child: Divider(
@@ -145,27 +144,31 @@ class _MainApp extends State<MainApp> {
                     const OutlinedButtonWidget('Masuk dengan Google'),
                     const OutlinedButtonWidget('Masuk dengan Facebook'),
                     Center(
-                      child: RichText(
-                        text: TextSpan(
-                          text: 'Belum punya akun? Ayo ',
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w300,
-                          ),
-                          children: [
-                            WidgetSpan(
-                              child: GestureDetector(
-                                onTap: () {},
-                                child: const Text(
-                                  'daftar',
-                                  style: TextStyle(
-                                    color: Colors.blue,
-                                    decoration: TextDecoration.underline,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 5),
+                        child: RichText(
+                          text: TextSpan(
+                            text: 'Belum punya akun? Ayo ',
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w300,
+                              fontFamily: 'Quicksand',
+                            ),
+                            children: [
+                              WidgetSpan(
+                                child: GestureDetector(
+                                  onTap: () {},
+                                  child: const Text(
+                                    'daftar',
+                                    style: TextStyle(
+                                      color: Colors.blue,
+                                      decoration: TextDecoration.underline,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -174,29 +177,33 @@ class _MainApp extends State<MainApp> {
                       thickness: 1,
                     ),
                     Center(
-                      child: RichText(
-                        textAlign: TextAlign.center,
-                        text: TextSpan(
-                          text: 'Dengan melakukan login, Anda setuju dengan ',
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w300,
-                          ),
-                          children: [
-                            WidgetSpan(
-                              child: GestureDetector(
-                                onTap: () {},
-                                child: const Text(
-                                  'syarat & ketentuan Dicoding',
-                                  style: TextStyle(
-                                    decoration: TextDecoration.underline,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w300,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 5),
+                        child: RichText(
+                          textAlign: TextAlign.center,
+                          text: TextSpan(
+                            text: 'Dengan melakukan login, Anda setuju dengan ',
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w300,
+                              fontFamily: 'Quicksand',
+                            ),
+                            children: [
+                              WidgetSpan(
+                                child: GestureDetector(
+                                  onTap: () {},
+                                  child: const Text(
+                                    'syarat & ketentuan Dicoding',
+                                    style: TextStyle(
+                                      decoration: TextDecoration.underline,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w300,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),

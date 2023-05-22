@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'text_widget.dart';
+
 class OutlinedButtonWidget extends StatelessWidget {
   final String text;
 
@@ -19,10 +21,7 @@ class OutlinedButtonWidget extends StatelessWidget {
                   BorderSide(color: Color(0xFF2d3e50))),
             ),
             onPressed: () {},
-            child: Text(
-              text,
-              style: const TextStyle(fontWeight: FontWeight.w400),
-            ),
+            child: TextWidget(text, weight: FontWeight.w400),
           ),
         ),
       ],
