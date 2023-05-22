@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../components/input_widget.dart';
 import '../components/outlined_button_widget.dart';
+import '../theme_app.dart';
 
 void main() => runApp(const MainApp());
 
@@ -106,9 +107,9 @@ class _MainApp extends State<MainApp> {
                         children: [
                           Expanded(
                             child: ElevatedButton(
-                              style: const ButtonStyle(
+                              style: ButtonStyle(
                                 backgroundColor: MaterialStatePropertyAll(
-                                  Color(0xFF2d3e50),
+                                  ThemeApp().primaryColor,
                                 ),
                               ),
                               onPressed: () {},
@@ -120,20 +121,20 @@ class _MainApp extends State<MainApp> {
                       Container(
                         margin: const EdgeInsets.symmetric(vertical: 10),
                         child: Row(
-                          children: const [
+                          children: [
                             Expanded(
                               child: Divider(
-                                color: Colors.grey,
+                                color: ThemeApp().primaryColor,
                                 thickness: 1,
                               ),
                             ),
-                            Padding(
+                            const Padding(
                               padding: EdgeInsets.symmetric(horizontal: 30),
                               child: Text('atau'),
                             ),
                             Expanded(
                               child: Divider(
-                                color: Colors.grey,
+                                color: ThemeApp().primaryColor,
                                 thickness: 1,
                               ),
                             ),
@@ -142,6 +143,62 @@ class _MainApp extends State<MainApp> {
                       ),
                       const OutlinedButtonWidget('Masuk dengan Google'),
                       const OutlinedButtonWidget('Masuk dengan Facebook'),
+                      Center(
+                        child: RichText(
+                          text: TextSpan(
+                            text: 'Belum punya akun? Ayo ',
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w300,
+                            ),
+                            children: [
+                              WidgetSpan(
+                                child: GestureDetector(
+                                  onTap: () {},
+                                  child: const Text(
+                                    'daftar',
+                                    style: TextStyle(
+                                      color: Colors.blue,
+                                      decoration: TextDecoration.underline,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Divider(
+                        color: ThemeApp().primaryColor,
+                        thickness: 1,
+                      ),
+                      Center(
+                        child: RichText(
+                          textAlign: TextAlign.center,
+                          text: TextSpan(
+                            text: 'Dengan melakukan login, Anda setuju dengan ',
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w300,
+                            ),
+                            children: [
+                              WidgetSpan(
+                                child: GestureDetector(
+                                  onTap: () {},
+                                  child: const Text(
+                                    'syarat & ketentuan Dicoding',
+                                    style: TextStyle(
+                                      decoration: TextDecoration.underline,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w300,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
